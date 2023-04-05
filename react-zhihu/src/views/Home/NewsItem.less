@@ -1,0 +1,69 @@
+.news-item-box{
+    position: relative;
+    box-sizing: border-box;
+    padding: 30px 0;
+    height: 160px;
+
+    a {
+        display: block;
+        height: 100%;
+    
+        &:visited {
+          .content {
+            .title {
+              color: #999;
+            }
+    
+            .author {
+              color: #aaa;
+            }
+          }
+        }
+    }
+
+    .adm-image{
+        position: absolute;
+        right: 0;
+        top: 15px;
+        width: 130px;
+        height: 130px;
+
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .adm-image-tip{
+            svg{
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+
+    .content{
+        margin-right: 160px;
+
+        .title{
+            overflow: hidden;
+            font-size: 32px;
+            color: #000;
+            max-height: 90px;
+            line-height: 45px;
+            text-overflow: ellipsis;
+            /* 弹性伸缩盒子模型显示 */
+            display: -webkit-box;
+            /* 限制在一个块元素显示的文本的行数 */
+            -webkit-line-clamp: 2;
+            /* 设置或检索伸缩盒对象的子元素的排列方式 */
+            -webkit-box-orient: vertical;
+        }
+
+        .author{
+            font-size: 24px;
+            color: #999;
+            line-height: 40px;
+        }
+    }
+}

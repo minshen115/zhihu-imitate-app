@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0
+    user-scalable=no">
+    <link rel="stylesheet" href="./src/assets/reset.min.css">
+    <title>rem</title>
+    <style>
+        html{
+            font-size: 100px;
+        }
+        #root{
+            margin: 0 auto;
+            max-width: 750px;
+        }
+        #box{
+            width: 3.28rem;
+            height: 1.64rem;
+            line-height: 1.64rem;
+            text-align: center;
+            background: lightblue;
+            font-size: .4rem;
+        }
+    </style>
+</head>
+<script>
+    // 计算当前设备下，rem和px的换算比例
+    (function(){
+        const computed = ()=>{
+            let html = document.documentElement;
+            deviceW = html.clientWidth;//获取设备宽度
+            designW = 750; //设计稿宽度
+            if(deviceW >= designW){
+                html.style.fontSize = 100 + 'px';
+                return
+            }
+            let ratio = 100 * deviceW /designW; 
+            html.style.fontSize = ratio + 'px';
+        }
+        computed();
+        window.addEventListener('resize',computed); //监听窗口变化
+    })()
+</script>
+<body>
+    <div id="root">
+        <div id="box">hello world!</div>
+    </div>
+</body>
+</html>
